@@ -1,0 +1,229 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Purchase Bill" pageWidth="842" pageHeight="595" orientation="Landscape" columnWidth="802" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="3c62ecc1-836c-4447-9139-748d82e3958c">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="id" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[SELECT
+     purchasebill.`purchase_bill_no` AS purchasebill_purchase_bill_no,
+     purchasebill.`supplier_id` AS purchasebill_supplier_id,
+     purchasebill.`supplier_name` AS purchasebill_supplier_name,
+     purchasebill.`supplier_address` AS purchasebill_supplier_address,
+     purchasebill.`customer_number` AS purchasebill_customer_number,
+     purchasebill.`grand_total` AS purchasebill_grand_total,
+     purchasebill.`quantity` AS purchasebill_quantity,
+     purchasebill.`tax` AS purchasebill_tax,
+     purchasebill.`date` AS purchasebill_date,
+     purchasebill.`total_amount` AS purchasebill_total_amount,
+     purchasebill.`discount` AS purchasebill_discount,
+     purchasebill.`gst` AS purchasebill_gst,
+     purchasebill.`pay_bill` AS purchasebill_pay_bill
+FROM
+     `purchasebill` purchasebill
+where
+purchase_bill_no=$P{id};]]>
+	</queryString>
+	<field name="purchasebill_purchase_bill_no" class="java.lang.Integer"/>
+	<field name="purchasebill_supplier_id" class="java.lang.String"/>
+	<field name="purchasebill_supplier_name" class="java.lang.String"/>
+	<field name="purchasebill_supplier_address" class="java.lang.String"/>
+	<field name="purchasebill_customer_number" class="java.lang.String"/>
+	<field name="purchasebill_grand_total" class="java.lang.String"/>
+	<field name="purchasebill_quantity" class="java.lang.String"/>
+	<field name="purchasebill_tax" class="java.lang.String"/>
+	<field name="purchasebill_date" class="java.sql.Date"/>
+	<field name="purchasebill_total_amount" class="java.lang.String"/>
+	<field name="purchasebill_discount" class="java.lang.String"/>
+	<field name="purchasebill_gst" class="java.lang.String"/>
+	<field name="purchasebill_pay_bill" class="java.lang.String"/>
+	<group name="purchasebill_purchase_bill_no">
+		<groupExpression><![CDATA[$F{purchasebill_purchase_bill_no}]]></groupExpression>
+	</group>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch">
+			<staticText>
+				<reportElement x="328" y="18" width="182" height="38" forecolor="#FF9999" uuid="2e23a3e3-49f7-42bb-9b7d-a1f2bc07367a"/>
+				<textElement>
+					<font size="26" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Purchase Bill]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="35" splitType="Stretch">
+			<line>
+				<reportElement x="0" y="20" width="802" height="1" uuid="0d7926a6-2ff4-49b6-94d5-f4be22c4ce0c"/>
+			</line>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="61" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="61" height="20" uuid="fed4c017-3fa7-4575-8a3d-6ef0b1a80bfd"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[pr_billno]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="61" y="0" width="61" height="20" uuid="347620b3-231d-412d-8db4-0e9a9188d963"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[sup_id]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="122" y="0" width="61" height="20" uuid="314ac192-bc2a-4249-84eb-d6e8e050f305"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[sup_nme]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="183" y="0" width="61" height="20" uuid="b4528cd5-6ccc-4dec-b048-cde63ad9a99a"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[sup_adr]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="244" y="0" width="61" height="20" uuid="c39476af-c998-4e76-ad67-a408574aeb7e"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[cust_no]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="305" y="0" width="61" height="20" uuid="7b7291d3-44be-4f62-8d0c-7c5980294df3"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[grad_tota]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="366" y="0" width="61" height="20" uuid="f858b227-002d-4f1b-94be-ab4ffa7163ff"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[quantity]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="427" y="0" width="61" height="20" uuid="1f31009a-be4b-4fc9-abd7-e131e44600e7"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[tax]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="488" y="0" width="61" height="20" uuid="e2f305f4-2241-45fb-ba86-2b8bd36a1456"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[date]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="549" y="0" width="61" height="20" uuid="5f67ef26-8267-4d79-a403-71d224977006"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[total_amt]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="610" y="0" width="61" height="20" uuid="4cc7ec8c-1cfd-4e98-b102-46c9a36aa0ed"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[discount]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="671" y="0" width="61" height="20" uuid="a7c73fb1-904a-4bdb-91cd-93f82586391c"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[gst]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="732" y="0" width="61" height="20" uuid="2a3336f1-b883-472f-a3a7-bd17ed1e1031"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[pay_bill]]></text>
+			</staticText>
+			<line>
+				<reportElement x="0" y="42" width="802" height="1" uuid="2f6fe036-a4c6-4498-b557-38cd5d433f07"/>
+			</line>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="125" splitType="Stretch">
+			<textField>
+				<reportElement x="0" y="0" width="61" height="20" uuid="a74fd95e-5aa3-4bdd-90fb-ef9de6a4e06c"/>
+				<textFieldExpression><![CDATA[$F{purchasebill_purchase_bill_no}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="61" y="0" width="61" height="20" uuid="2aca4e5f-02e3-44f1-93ec-e35b86e823be"/>
+				<textFieldExpression><![CDATA[$F{purchasebill_supplier_id}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="122" y="0" width="61" height="20" uuid="2782c316-fc71-4b0d-ad57-3960780f5582"/>
+				<textFieldExpression><![CDATA[$F{purchasebill_supplier_name}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="183" y="0" width="61" height="20" uuid="fdc68040-163b-4909-af52-433655b25f21"/>
+				<textFieldExpression><![CDATA[$F{purchasebill_supplier_address}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="244" y="0" width="61" height="20" uuid="6e51e535-b387-4088-8a0c-856baf7ac6d6"/>
+				<textFieldExpression><![CDATA[$F{purchasebill_customer_number}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="305" y="0" width="61" height="20" uuid="605f2bc1-9c81-4e4f-8b51-772959a948e9"/>
+				<textFieldExpression><![CDATA[$F{purchasebill_grand_total}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="366" y="0" width="61" height="20" uuid="0edef579-99aa-4f91-a151-097586a79f3f"/>
+				<textFieldExpression><![CDATA[$F{purchasebill_quantity}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="427" y="0" width="61" height="20" uuid="b977ad4a-8a70-4fd0-a882-469abcaf77a7"/>
+				<textFieldExpression><![CDATA[$F{purchasebill_tax}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="488" y="0" width="61" height="20" uuid="a58aa9d7-fd67-4e4a-9d27-b9c0e1631e6f"/>
+				<textFieldExpression><![CDATA[$F{purchasebill_date}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="549" y="0" width="61" height="20" uuid="8be875f0-2e2d-43fd-9cc7-4209b13befa6"/>
+				<textFieldExpression><![CDATA[$F{purchasebill_total_amount}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="610" y="0" width="61" height="20" uuid="4b643cdb-33aa-4f01-9909-3edc5413b741"/>
+				<textFieldExpression><![CDATA[$F{purchasebill_discount}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="671" y="0" width="61" height="20" uuid="ecaa70fd-40b6-4c78-ab2e-73341a919ece"/>
+				<textFieldExpression><![CDATA[$F{purchasebill_gst}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="732" y="0" width="61" height="20" uuid="017cfbd7-67de-43df-b4f6-7b74c31380ef"/>
+				<textFieldExpression><![CDATA[$F{purchasebill_pay_bill}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>

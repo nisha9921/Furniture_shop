@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="StockDetails" pageWidth="842" pageHeight="595" orientation="Landscape" columnWidth="802" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="987f9e7c-6315-40c4-af55-6f7e9f293361">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<queryString language="SQL">
+		<![CDATA[SELECT
+     stockdetail.`item_id` AS stockdetail_item_id,
+     stockdetail.`date` AS stockdetail_date,
+     stockdetail.`furniture_type` AS stockdetail_furniture_type,
+     stockdetail.`available_stock` AS stockdetail_available_stock,
+     stockdetail.`company_name` AS stockdetail_company_name,
+     stockdetail.`design_name` AS stockdetail_design_name,
+     stockdetail.`quantity` AS stockdetail_quantity,
+     stockdetail.`size` AS stockdetail_size,
+     stockdetail.`unit` AS stockdetail_unit
+FROM
+     `stockdetail` stockdetail]]>
+	</queryString>
+	<field name="stockdetail_item_id" class="java.lang.String"/>
+	<field name="stockdetail_date" class="java.lang.String"/>
+	<field name="stockdetail_furniture_type" class="java.lang.String"/>
+	<field name="stockdetail_available_stock" class="java.lang.String"/>
+	<field name="stockdetail_company_name" class="java.lang.String"/>
+	<field name="stockdetail_design_name" class="java.lang.String"/>
+	<field name="stockdetail_quantity" class="java.lang.String"/>
+	<field name="stockdetail_size" class="java.lang.String"/>
+	<field name="stockdetail_unit" class="java.lang.String"/>
+	<group name="stockdetail_item_id">
+		<groupExpression><![CDATA[$F{stockdetail_item_id}]]></groupExpression>
+	</group>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="129" splitType="Stretch">
+			<staticText>
+				<reportElement x="128" y="12" width="570" height="50" forecolor="#006666" uuid="94d29530-9306-498d-8fe7-0826294bd698"/>
+				<textElement textAlignment="Center">
+					<font size="36" isBold="true"/>
+				</textElement>
+				<text><![CDATA[]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="277" y="62" width="239" height="53" uuid="17f97b9f-186a-4ce6-aad8-e8caefd0bc15"/>
+				<textElement textAlignment="Center">
+					<font size="30" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Stock  Details]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="35" splitType="Stretch">
+			<line>
+				<reportElement x="3" y="16" width="799" height="1" uuid="5a7a6204-107b-46b3-951f-c931a5105306"/>
+			</line>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="61" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="89" height="20" uuid="db594225-34d4-48aa-8a05-92498bef7037"/>
+				<textElement textAlignment="Center">
+					<font fontName="Constantia" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Item Id]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="89" y="0" width="89" height="20" uuid="4dc183ac-8296-4a32-be02-f8963111ced1"/>
+				<textElement textAlignment="Center">
+					<font fontName="Constantia" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Date]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="178" y="0" width="89" height="20" uuid="f54c67fc-de6d-4de5-938d-97042c088e3d"/>
+				<textElement textAlignment="Center">
+					<font fontName="Constantia" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Furniture Type]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="267" y="0" width="89" height="20" uuid="5c381162-23a1-4e1d-bef9-1b6e0ca57228"/>
+				<textElement textAlignment="Center">
+					<font fontName="Constantia" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Available Stock]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="356" y="0" width="89" height="20" uuid="78fce16b-cca4-418e-bae6-1c9ff46e4bdc"/>
+				<textElement textAlignment="Center">
+					<font fontName="Constantia" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Company  Name]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="445" y="0" width="89" height="20" uuid="77b250dc-cdc0-4385-8f8b-61c5f5bb0e7c"/>
+				<textElement textAlignment="Center">
+					<font fontName="Constantia" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Design Name]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="534" y="0" width="89" height="20" uuid="e25320d3-180d-4a75-9adc-307e65251052"/>
+				<textElement textAlignment="Center">
+					<font fontName="Constantia" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Quantity]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="623" y="0" width="89" height="20" uuid="274b9a1e-fcb8-470c-b69b-60436f719d06"/>
+				<textElement textAlignment="Center">
+					<font fontName="Constantia" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Size]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="712" y="0" width="89" height="20" uuid="cecb8a31-c311-4325-bc53-f0686b22a988"/>
+				<textElement textAlignment="Center">
+					<font fontName="Constantia" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Unit]]></text>
+			</staticText>
+			<line>
+				<reportElement x="3" y="38" width="798" height="1" uuid="d10a7cf2-2497-4363-b28f-34c33338949f"/>
+			</line>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="56" splitType="Stretch">
+			<textField>
+				<reportElement x="0" y="0" width="89" height="20" uuid="375ad146-d5a5-4d89-8ae5-09769ba2dd5f"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{stockdetail_item_id}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="89" y="0" width="89" height="20" uuid="e1d78989-8b12-402f-8341-32e67fbb5da0"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{stockdetail_date}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="178" y="0" width="89" height="20" uuid="20179409-74b6-47d4-b321-afdd0e594236"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{stockdetail_furniture_type}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="267" y="0" width="89" height="20" uuid="727dbeef-fea1-441b-9c21-3f13bc4f5279"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{stockdetail_available_stock}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="356" y="0" width="89" height="20" uuid="dbd2ee4e-70ed-4dd5-8ef1-201de9f497c2"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{stockdetail_company_name}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="445" y="0" width="89" height="20" uuid="c28b96e8-24a3-4500-8119-052cfeb7af5e"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{stockdetail_design_name}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="534" y="0" width="89" height="20" uuid="a24c1c68-aa48-41bc-a21b-e2a1295b0679"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{stockdetail_quantity}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="623" y="0" width="89" height="20" uuid="52c9fb58-e279-43e7-a3e0-293f868ab699"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{stockdetail_size}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="712" y="0" width="89" height="20" uuid="7059fc63-f74c-43b9-b92e-dddb2cfa935c"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{stockdetail_unit}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="2" y="39" width="800" height="1" uuid="3f84bfea-5c08-4f79-ae33-0e31c6d09151"/>
+			</line>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="15" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="12" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="12" splitType="Stretch"/>
+	</summary>
+</jasperReport>

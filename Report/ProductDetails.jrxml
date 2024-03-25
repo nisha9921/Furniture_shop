@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="ProductDetails" pageWidth="842" pageHeight="595" orientation="Landscape" columnWidth="802" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="f060ff8f-b1f9-4582-a88e-b0023d3b2f38">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<queryString language="SQL">
+		<![CDATA[SELECT
+     productdetail.`product_id` AS productdetail_product_id,
+     productdetail.`product_name` AS productdetail_product_name,
+     productdetail.`category` AS productdetail_category,
+     productdetail.`price` AS productdetail_price,
+     productdetail.`quantity` AS productdetail_quantity,
+     productdetail.`totalprice` AS productdetail_totalprice
+FROM
+     `productdetail` productdetail]]>
+	</queryString>
+	<field name="productdetail_product_id" class="java.lang.String"/>
+	<field name="productdetail_product_name" class="java.lang.String"/>
+	<field name="productdetail_category" class="java.lang.String"/>
+	<field name="productdetail_price" class="java.lang.String"/>
+	<field name="productdetail_quantity" class="java.lang.String"/>
+	<field name="productdetail_totalprice" class="java.lang.String"/>
+	<group name="productdetail_product_id">
+		<groupExpression><![CDATA[$F{productdetail_product_id}]]></groupExpression>
+	</group>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="143" splitType="Stretch">
+			<staticText>
+				<reportElement x="266" y="70" width="320" height="46" uuid="3228e6cf-197a-4607-b542-e27b2b3bd1c5"/>
+				<textElement textAlignment="Center">
+					<font size="30" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Product Details]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="35" splitType="Stretch">
+			<line>
+				<reportElement x="0" y="17" width="798" height="1" uuid="43b63a33-0bac-4c6a-a31a-ab88d355876c"/>
+			</line>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="61" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="133" height="20" uuid="32d67020-915c-4c7c-b965-e7a365c407d2"/>
+				<textElement textAlignment="Center">
+					<font fontName="Constantia" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[product id]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="133" y="0" width="133" height="20" uuid="21656e06-a395-431d-ad3b-9fc8818a6e4c"/>
+				<textElement textAlignment="Center">
+					<font fontName="Constantia" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[product name]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="266" y="0" width="133" height="20" uuid="128348fc-753c-4d4f-b238-6f140464523c"/>
+				<textElement textAlignment="Center">
+					<font fontName="Constantia" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[category]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="399" y="0" width="133" height="20" uuid="05b1616a-8f44-45cc-af2a-29120f19e925"/>
+				<textElement textAlignment="Center">
+					<font fontName="Constantia" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[price]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="532" y="0" width="133" height="20" uuid="6d283ac0-e517-438c-b5a8-e9d0c2eb6a39"/>
+				<textElement textAlignment="Center">
+					<font fontName="Constantia" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[quantity]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="665" y="0" width="133" height="20" uuid="c185ab06-f8b2-45ba-8e3a-16a3b3d3513c"/>
+				<textElement textAlignment="Center">
+					<font fontName="Constantia" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[total price]]></text>
+			</staticText>
+			<line>
+				<reportElement x="0" y="40" width="798" height="1" uuid="59b9f3c6-c3df-4f31-858d-ad2c11510705"/>
+			</line>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="54" splitType="Stretch">
+			<textField>
+				<reportElement x="0" y="0" width="133" height="20" uuid="b5d244fa-ad07-465a-8e24-816a40c5ee17"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{productdetail_product_id}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="133" y="0" width="133" height="20" uuid="43ae23fd-ac43-4761-92d6-20aa3bb14845"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{productdetail_product_name}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="266" y="0" width="133" height="20" uuid="b4bdcef6-59fa-4ac3-ae1c-308d7e4a40d9"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{productdetail_category}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="399" y="0" width="133" height="20" uuid="9e833d6f-581f-4bf1-869d-c838a0749602"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{productdetail_price}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="532" y="0" width="133" height="20" uuid="47c7f87f-4860-40f6-a81f-da8e1ac45826"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{productdetail_quantity}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="665" y="0" width="133" height="20" uuid="9b1a2bab-8f2a-4e1a-b614-21cdb1238701"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{productdetail_totalprice}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="1" y="39" width="797" height="1" uuid="7d965808-1c64-48d6-a4a7-1cdb11de205a"/>
+			</line>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="20" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="17" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="18" splitType="Stretch"/>
+	</summary>
+</jasperReport>

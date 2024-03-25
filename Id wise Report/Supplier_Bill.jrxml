@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Supplier_Bill" pageWidth="842" pageHeight="595" orientation="Landscape" columnWidth="802" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="80439498-dba2-4aef-9ac9-d31ed56fa506">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="34"/>
+	<parameter name="id" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[SELECT
+     supplierorderbill.`order_id` AS supplierorderbill_order_id,
+     supplierorderbill.`product_id` AS supplierorderbill_product_id,
+     supplierorderbill.`product_name` AS supplierorderbill_product_name,
+     supplierorderbill.`quantity` AS supplierorderbill_quantity,
+     supplierorderbill.`product_price` AS supplierorderbill_product_price,
+     supplierorderbill.`total_price` AS supplierorderbill_total_price,
+     supplierorderbill.`date` AS supplierorderbill_date
+FROM
+     `supplierorderbill` supplierorderbill
+where
+order_id=$P{id};]]>
+	</queryString>
+	<field name="supplierorderbill_order_id" class="java.lang.String"/>
+	<field name="supplierorderbill_product_id" class="java.lang.String"/>
+	<field name="supplierorderbill_product_name" class="java.lang.String"/>
+	<field name="supplierorderbill_quantity" class="java.lang.String"/>
+	<field name="supplierorderbill_product_price" class="java.lang.String"/>
+	<field name="supplierorderbill_total_price" class="java.lang.String"/>
+	<field name="supplierorderbill_date" class="java.sql.Date"/>
+	<group name="supplierorderbill_order_id">
+		<groupExpression><![CDATA[$F{supplierorderbill_order_id}]]></groupExpression>
+	</group>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch">
+			<staticText>
+				<reportElement x="303" y="18" width="236" height="42" forecolor="#FF6666" uuid="a04c544a-e3f8-4c39-b0c6-c5cee0e3faff"/>
+				<textElement>
+					<font size="26" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Supplier Order Bill]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="35" splitType="Stretch">
+			<line>
+				<reportElement x="0" y="16" width="798" height="1" uuid="fa216b7e-2734-4438-89ea-03cccb141e5a"/>
+			</line>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="61" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="114" height="20" uuid="27c4dd42-96af-45c6-903e-dba660074ac1"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[order_id]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="114" y="0" width="114" height="20" uuid="ac32f11a-18d8-4cbd-af79-a5fee0e187b8"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[product_id]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="228" y="0" width="114" height="20" uuid="b879b064-d122-4f0d-bda5-b89b17683b99"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[product_name]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="342" y="0" width="114" height="20" uuid="e4d7f3b2-3f09-418b-b6b4-8fdbef89d834"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[quantity]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="456" y="0" width="114" height="20" uuid="834fb75f-94e8-4563-88e6-ce917f120688"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[product_price]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="570" y="0" width="114" height="20" uuid="3cc5f521-0e62-40e9-a97a-e25e1d4ed8b1"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[total_price]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="684" y="0" width="114" height="20" uuid="b916bff9-1beb-468a-9cc1-747e270721df"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[date]]></text>
+			</staticText>
+			<line>
+				<reportElement x="0" y="40" width="802" height="1" uuid="085628e2-0e6b-4694-8426-3cbd7f779fea"/>
+			</line>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="125" splitType="Stretch">
+			<textField>
+				<reportElement x="0" y="0" width="114" height="20" uuid="b4ed4845-0d88-4886-a3b2-438bc5485bf8"/>
+				<textFieldExpression><![CDATA[$F{supplierorderbill_order_id}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="114" y="0" width="114" height="20" uuid="f42fc2bf-6770-4cf5-b903-fda76888b683"/>
+				<textFieldExpression><![CDATA[$F{supplierorderbill_product_id}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="228" y="0" width="114" height="20" uuid="307208bb-274a-4fb7-89dd-784393225326"/>
+				<textFieldExpression><![CDATA[$F{supplierorderbill_product_name}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="342" y="0" width="114" height="20" uuid="544fc3af-9175-4e8e-8de5-64d2fada1133"/>
+				<textFieldExpression><![CDATA[$F{supplierorderbill_quantity}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="456" y="0" width="114" height="20" uuid="7d192121-7539-4648-88ee-f1152737c719"/>
+				<textFieldExpression><![CDATA[$F{supplierorderbill_product_price}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="570" y="0" width="114" height="20" uuid="bbd3ed43-408c-451e-83dc-479d5c78550a"/>
+				<textFieldExpression><![CDATA[$F{supplierorderbill_total_price}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="684" y="0" width="114" height="20" uuid="1e4e93d7-1b25-4cff-b280-816bd49d8d0e"/>
+				<textFieldExpression><![CDATA[$F{supplierorderbill_date}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>

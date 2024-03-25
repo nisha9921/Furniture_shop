@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="manager details" pageWidth="842" pageHeight="595" orientation="Landscape" columnWidth="802" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="39d209ce-e929-427c-b131-e545f02d42f7">
+	<property name="ireport.zoom" value="0.9090909090909091"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<queryString language="SQL">
+		<![CDATA[SELECT
+     managerdetail.`manager_name` AS managerdetail_manager_name,
+     managerdetail.`manager_contact` AS managerdetail_manager_contact,
+     managerdetail.`manager_address` AS managerdetail_manager_address,
+     managerdetail.`manager_email_id` AS managerdetail_manager_email_id,
+     managerdetail.`qualification` AS managerdetail_qualification
+FROM
+     `managerdetail` managerdetail]]>
+	</queryString>
+	<field name="managerdetail_manager_name" class="java.lang.String"/>
+	<field name="managerdetail_manager_contact" class="java.lang.String"/>
+	<field name="managerdetail_manager_address" class="java.lang.String"/>
+	<field name="managerdetail_manager_email_id" class="java.lang.String"/>
+	<field name="managerdetail_qualification" class="java.lang.String"/>
+	<group name="managerdetail_manager_name">
+		<groupExpression><![CDATA[$F{managerdetail_manager_name}]]></groupExpression>
+	</group>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="133" splitType="Stretch">
+			<staticText>
+				<reportElement x="249" y="70" width="320" height="47" uuid="83997e47-80fa-4c6b-b9f4-b50b4ed27ceb"/>
+				<textElement textAlignment="Center">
+					<font size="30" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Employee Details]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="35" splitType="Stretch">
+			<line>
+				<reportElement x="2" y="17" width="798" height="1" uuid="4a57022b-faf3-4544-9dc9-35cb5a04e49a"/>
+			</line>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="61" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="160" height="20" uuid="66c36f19-4e81-4d1a-8352-fb14b353fc94"/>
+				<textElement textAlignment="Center">
+					<font fontName="Constantia" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Employee name]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="160" y="0" width="160" height="20" uuid="07d64eb0-de56-4da8-a320-b64d990a7eb1"/>
+				<textElement textAlignment="Center">
+					<font fontName="Constantia" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[ contact]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="320" y="0" width="160" height="20" uuid="0b077e83-7343-4239-b17d-df8328676b65"/>
+				<textElement textAlignment="Center">
+					<font fontName="Constantia" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[address]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="480" y="0" width="160" height="20" uuid="bea23f25-cafe-45ff-a79f-9eef90683de3"/>
+				<textElement textAlignment="Center">
+					<font fontName="Constantia" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[email id]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="640" y="0" width="160" height="20" uuid="47253cb9-826a-419c-bfa1-a194241db6d5"/>
+				<textElement textAlignment="Center">
+					<font fontName="Constantia" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[qualification]]></text>
+			</staticText>
+			<line>
+				<reportElement x="1" y="41" width="799" height="1" uuid="68ed6251-2e59-436a-a6b5-b51e71883848"/>
+			</line>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="57" splitType="Stretch">
+			<textField>
+				<reportElement x="0" y="0" width="160" height="20" uuid="761732d5-b6c2-49bb-a59d-2e2a335aaa6d"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{managerdetail_manager_name}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="160" y="0" width="160" height="20" uuid="f93e2ed8-50c1-401d-bf10-2ea29d5e1f89"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{managerdetail_manager_contact}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="320" y="0" width="160" height="20" uuid="a2e7cc36-050d-401a-896e-e2ce6053b7a5"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{managerdetail_manager_address}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="480" y="0" width="160" height="20" uuid="553468f1-f7bc-4a45-adbc-84948ef2cdac"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{managerdetail_manager_email_id}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="640" y="0" width="160" height="20" uuid="619f8df9-3732-420c-8f47-0e09a5eeb72b"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{managerdetail_qualification}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="1" y="34" width="799" height="1" uuid="5905f66e-eb82-4da3-9dcb-935ae516a2aa"/>
+			</line>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="14" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="10" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="22" splitType="Stretch"/>
+	</summary>
+</jasperReport>

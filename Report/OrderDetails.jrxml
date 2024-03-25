@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="OrderDetails" pageWidth="842" pageHeight="595" orientation="Landscape" columnWidth="802" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="7d05a911-410e-4a10-a73e-f966d4a4b7f8">
+	<property name="ireport.zoom" value="1.5"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<queryString language="SQL">
+		<![CDATA[SELECT
+     orderdetail.`order_id` AS orderdetail_order_id,
+     orderdetail.`cust_name` AS orderdetail_cust_name,
+     orderdetail.`product_id` AS orderdetail_product_id,
+     orderdetail.`product_name` AS orderdetail_product_name,
+     orderdetail.`quantity` AS orderdetail_quantity,
+     orderdetail.`date` AS orderdetail_date,
+     orderdetail.`grand_total` AS orderdetail_grand_total,
+     orderdetail.`total_price` AS orderdetail_total_price
+FROM
+     `orderdetail` orderdetail]]>
+	</queryString>
+	<field name="orderdetail_order_id" class="java.lang.String"/>
+	<field name="orderdetail_cust_name" class="java.lang.String"/>
+	<field name="orderdetail_product_id" class="java.lang.String"/>
+	<field name="orderdetail_product_name" class="java.lang.String"/>
+	<field name="orderdetail_quantity" class="java.lang.String"/>
+	<field name="orderdetail_date" class="java.lang.String"/>
+	<field name="orderdetail_grand_total" class="java.lang.String"/>
+	<field name="orderdetail_total_price" class="java.lang.String"/>
+	<group name="orderdetail_order_id">
+		<groupExpression><![CDATA[$F{orderdetail_order_id}]]></groupExpression>
+	</group>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="154" splitType="Stretch">
+			<staticText>
+				<reportElement x="180" y="95" width="320" height="46" uuid="8ca6c1aa-a1b8-485d-9aba-c72793e12a49"/>
+				<textElement textAlignment="Center">
+					<font size="30" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Order Details]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="35" splitType="Stretch">
+			<line>
+				<reportElement x="5" y="16" width="795" height="1" uuid="a3ec379c-3766-42ac-bb00-485eb8cdbb9b"/>
+			</line>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="61" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="100" height="20" uuid="ab3674f1-5e94-442c-811e-6a1e2fee2a78"/>
+				<textElement textAlignment="Center">
+					<font fontName="Constantia" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[order id]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="100" y="0" width="100" height="20" uuid="2dfa183a-3584-4d0c-8dd7-01abeab1039b"/>
+				<textElement textAlignment="Center">
+					<font fontName="Comic Sans MS" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[cust name]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="200" y="0" width="100" height="20" uuid="18669dfd-6ca3-42a4-ae10-d5dabb7fcf16"/>
+				<textElement textAlignment="Center">
+					<font fontName="Comic Sans MS" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[product id]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="300" y="0" width="100" height="20" uuid="9aca7692-132b-4b75-b74a-2a1268ad23fd"/>
+				<textElement textAlignment="Center">
+					<font fontName="Constantia" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[product name]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="400" y="0" width="100" height="20" uuid="1d58a236-dc5d-4c6d-8821-141a872f228b"/>
+				<textElement textAlignment="Center">
+					<font fontName="Constantia" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[quantity]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="500" y="0" width="100" height="20" uuid="363295a9-830a-4fda-938d-9a5842dd79c4"/>
+				<textElement textAlignment="Center">
+					<font fontName="Constantia" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[date]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="600" y="0" width="100" height="20" uuid="6f397021-b42c-4479-bcb7-dae004c30e63"/>
+				<textElement textAlignment="Center">
+					<font fontName="Constantia" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[grand total]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="700" y="0" width="100" height="20" uuid="410a7744-b442-425e-b491-36101cc1baa0"/>
+				<textElement textAlignment="Center">
+					<font fontName="Constantia" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[total price]]></text>
+			</staticText>
+			<line>
+				<reportElement x="2" y="36" width="798" height="1" uuid="2d753490-d486-4993-b827-fa4cd0ba67d8"/>
+			</line>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="53" splitType="Stretch">
+			<textField>
+				<reportElement x="0" y="0" width="100" height="20" uuid="75ecb568-1aa7-41df-aa36-ad2a54ef9838"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{orderdetail_order_id}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="100" y="0" width="100" height="20" uuid="e3ee9b2f-1439-400b-9462-7363809653ee"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{orderdetail_cust_name}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="200" y="0" width="100" height="20" uuid="0a1f86d9-dfa0-4896-8101-672ba2c959f6"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{orderdetail_product_id}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="300" y="0" width="100" height="20" uuid="a5382a44-48a2-4d7c-9b37-b9b64beb523a"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{orderdetail_product_name}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="400" y="0" width="100" height="20" uuid="aea278d1-b356-403b-828a-c88592cb4e08"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{orderdetail_quantity}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="500" y="0" width="100" height="20" uuid="0138db5e-9c94-4410-8a5a-4ff0787ddd1f"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{orderdetail_date}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="600" y="0" width="100" height="20" uuid="2c42184b-935a-44e6-852b-c67413a8ca28"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{orderdetail_grand_total}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="700" y="0" width="100" height="20" uuid="3cb50950-92be-46a6-83d1-430eb8acc1ae"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{orderdetail_total_price}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="2" y="40" width="798" height="1" uuid="3e21f4de-a7fe-446f-a0ae-f42fc2f21835"/>
+			</line>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="12" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="12" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="12" splitType="Stretch"/>
+	</summary>
+</jasperReport>

@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="customer details" pageWidth="842" pageHeight="595" orientation="Landscape" columnWidth="802" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="0d92ff81-cdcf-4b46-8f7f-fca0b7d588f3">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<queryString language="SQL">
+		<![CDATA[SELECT
+     customerdetails.`cust_id` AS customerdetails_cust_id,
+     customerdetails.`cust_name` AS customerdetails_cust_name,
+     customerdetails.`cust_address` AS customerdetails_cust_address,
+     customerdetails.`contact` AS customerdetails_contact,
+     customerdetails.`email_id` AS customerdetails_email_id,
+     customerdetails.`date` AS customerdetails_date
+FROM
+     `customerdetails` customerdetails]]>
+	</queryString>
+	<field name="customerdetails_cust_id" class="java.lang.String"/>
+	<field name="customerdetails_cust_name" class="java.lang.String"/>
+	<field name="customerdetails_cust_address" class="java.lang.String"/>
+	<field name="customerdetails_contact" class="java.lang.String"/>
+	<field name="customerdetails_email_id" class="java.lang.String"/>
+	<field name="customerdetails_date" class="java.lang.String"/>
+	<group name="customerdetails_cust_id">
+		<groupExpression><![CDATA[$F{customerdetails_cust_id}]]></groupExpression>
+	</group>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="139" splitType="Stretch">
+			<staticText>
+				<reportElement x="266" y="70" width="310" height="53" uuid="fea42a7e-c1d0-45fc-a59b-30d7adeb6fda"/>
+				<textElement textAlignment="Center">
+					<font size="30" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Customer Details  ]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="35" splitType="Stretch">
+			<line>
+				<reportElement x="3" y="24" width="795" height="1" uuid="8cab3fae-8ecf-4c66-9735-940bab33a2ff"/>
+			</line>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="61" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="133" height="20" uuid="c3e2397e-797b-489d-8d55-9a77959edef7"/>
+				<textElement textAlignment="Center">
+					<font fontName="Constantia" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[cust id]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="133" y="0" width="133" height="20" uuid="f42dc0d6-5dac-45af-b77c-86bcc4bb5370"/>
+				<textElement textAlignment="Center">
+					<font fontName="Constantia" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[cust name]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="266" y="0" width="133" height="20" uuid="637dd37e-f528-496d-a53b-4cbcdc1e4851"/>
+				<textElement textAlignment="Center">
+					<font fontName="Constantia" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[cust address]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="399" y="0" width="133" height="20" uuid="4cf77f49-5db3-42db-8c32-b0603fe9a6c6"/>
+				<textElement textAlignment="Center">
+					<font fontName="Constantia" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[cust contact]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="532" y="0" width="133" height="20" uuid="df59f28f-2f1d-4fe7-b894-863c0991373c"/>
+				<textElement textAlignment="Center">
+					<font fontName="Constantia" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[cust email id]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="665" y="0" width="133" height="20" uuid="cb03cdc1-9780-413f-9ddb-4f0cc65c1d89"/>
+				<textElement textAlignment="Center">
+					<font fontName="Constantia" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[cust entry date]]></text>
+			</staticText>
+			<line>
+				<reportElement x="4" y="37" width="794" height="1" uuid="45eecada-8520-4a91-bfe2-f788d7db66a3"/>
+			</line>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="48" splitType="Stretch">
+			<textField>
+				<reportElement x="0" y="0" width="133" height="20" uuid="df3ee08a-ecbd-4e02-84ca-d483a2421179"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{customerdetails_cust_id}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="133" y="0" width="133" height="20" uuid="f3cc7df7-509c-417e-9608-50b8146ec7d9"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{customerdetails_cust_name}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="266" y="0" width="133" height="20" uuid="c9c94cd2-5a13-4b6e-ab38-8a635ac194d4"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{customerdetails_cust_address}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="399" y="0" width="133" height="20" uuid="50c4e99a-459f-4b62-9672-faf6087c1472"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{customerdetails_contact}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="532" y="0" width="133" height="20" uuid="97d126ef-b8c3-41ee-8e6a-1e000127e4a5"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{customerdetails_email_id}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="665" y="0" width="133" height="20" uuid="4b8df009-06ef-4490-8274-33d7561e83ef"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{customerdetails_date}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="2" y="40" width="796" height="1" uuid="0d2e24e7-a046-414f-a768-9414a9715460"/>
+			</line>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="15" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="14" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="12" splitType="Stretch"/>
+	</summary>
+</jasperReport>
